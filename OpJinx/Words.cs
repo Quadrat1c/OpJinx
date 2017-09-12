@@ -8,9 +8,13 @@ namespace OpJinx
 {
     public class Words
     {
-        public static bool debug = false;
-
-        public static void DensityCheck(string site)
+        /// <summary>
+        /// Check keyword density on a webpage
+        /// </summary>
+        /// <param name="site"></param>
+        /// <param name="debug"></param>
+        /// <returns></returns>
+        public static List<string> DensityCheck(string site, bool debug)
         {
             using (WebClient client = new WebClient())
             {
@@ -54,8 +58,9 @@ namespace OpJinx
                     "just", "know", "but", "now", "one", "topics", "how", "will", "there", "its", "news", "they", "over", "this", "has",
                     "like", "your", "while", "says", "before", "still", "today", "anonymous", "should", "why", "world", "show", "infowars",
                     "store", "special", "reports", "view", "after", "cnn", "edition", "set", "page", "glp", "guy", "get", "his", "only",
-                    "been", "next", "use", "most", "tells", "david", "knight", "watch", "video", "confirm" };
-
+                    "been", "next", "use", "most", "tells", "david", "knight", "watch", "video", "confirm", "daily", "drudge", "report",
+                    "forum", "forums", "thread", "threads", "reddit", "gold", "past", "post", "say", "ago", "comments", "search", "hours",
+                    "share", "[uk]", "times", "were", "doing", "media" };
                 list = list.Where(x => x.Length > 2).Where(x => !blacklist.Contains(x)).ToList();
                 #region Debug
                 if (debug == true)
@@ -64,16 +69,16 @@ namespace OpJinx
                     Console.WriteLine(list);
                 }
                 #endregion
-                var keywords = list.GroupBy(x => x).OrderByDescending(x => x.Count());
 
-                foreach (var word in keywords)
-                {
-                    if (word.Count() > 1)
-                        Console.WriteLine($"{word.Key} {word.Count()}");
-                }
+                return list;
             }
         }
 
+        /// <summary>
+        /// Remove Html Tags from a string
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
         static string RemoveHtmlTags(string html)
         {
             string htmlRemoved = Regex.Replace(html, @"<script[^>]*>[\s\S]*?</script>|<[^>]+>|&nbsp;", " ").Trim();
