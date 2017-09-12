@@ -25,3 +25,4 @@ Initial Commit and Creation of the project
 ```
 
 ## License
+[MIT](https://github.com/Quadrat1c/OpJinx/blob/master/LICENSE) - Use my code for wtf you wan't. Sell it, commercial use I don't care, I take no liability for what you do with it.
