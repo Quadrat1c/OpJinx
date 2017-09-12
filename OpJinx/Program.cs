@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OpJinx
 {
@@ -10,6 +6,21 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Operation Jinx");
+
+            Words.wordDensity("http://abovetopsecret.com");
+            Console.ReadLine();
+
+            Words.wordDensity("http://godlikeproductions.com");
+            Console.ReadLine();
+
+            Words.wordDensity("http://infowars.com");
+            Console.ReadLine();
+
+            Words.wordDensity("http://cnn.com");
+
+            Console.Write("Press any key to exit.");
+            Console.ReadLine();
         }
     }
 }
