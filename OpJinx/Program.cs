@@ -9,6 +9,19 @@ namespace OpJinx
         static void Main(string[] args)
         {
             Console.WriteLine("Operation Jinx\r\n");
+            string[] rawData = new string[]
+            {
+                "trump 7 4 1",
+                "hillary 4 3 1",
+                "irma 3 4 1",
+                "god 2 2 0",
+                "hurricane 4 3 1",
+                "alex 14 2 0",
+                "jones 5 1 0"
+            };
+
+            Algotelli.Run(rawData, true);
+            Console.ReadLine();
 
             List<string> keywords = new List<string>();
 
