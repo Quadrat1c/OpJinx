@@ -8,7 +8,7 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Operation Jinx");
+            Console.WriteLine("Operation Jinx\r\n");
 
             List<string> keywords = new List<string>();
 
