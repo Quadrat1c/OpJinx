@@ -8,16 +8,16 @@ namespace OpJinx
         {
             Console.WriteLine("Operation Jinx");
 
-            Words.wordDensity("http://abovetopsecret.com");
+            Words.DensityCheck("http://abovetopsecret.com");
             Console.ReadLine();
 
-            Words.wordDensity("http://godlikeproductions.com");
+            Words.DensityCheck("http://godlikeproductions.com");
             Console.ReadLine();
 
-            Words.wordDensity("http://infowars.com");
+            Words.DensityCheck("http://infowars.com");
             Console.ReadLine();
 
-            Words.wordDensity("http://cnn.com");
+            Words.DensityCheck("http://cnn.com");
 
             Console.Write("Press any key to exit.");
             Console.ReadLine();

@@ -10,7 +10,7 @@ namespace OpJinx
     {
         public static bool debug = false;
 
-        public static void wordDensity(string site)
+        public static void DensityCheck(string site)
         {
             using (WebClient client = new WebClient())
             {
@@ -53,7 +53,8 @@ namespace OpJinx
                     "are", "have", "new", "from", "what", "our", "she", "all", "here", "content", "down", "did", "can", "find", "come",
                     "just", "know", "but", "now", "one", "topics", "how", "will", "there", "its", "news", "they", "over", "this", "has",
                     "like", "your", "while", "says", "before", "still", "today", "anonymous", "should", "why", "world", "show", "infowars",
-                    "store", "special", "reports", "view", "after", "cnn", "edition", "set" };
+                    "store", "special", "reports", "view", "after", "cnn", "edition", "set", "page", "glp", "guy", "get", "his", "only",
+                    "been", "next", "use", "most", "tells", "david", "knight", "watch", "video", "confirm" };
 
                 list = list.Where(x => x.Length > 2).Where(x => !blacklist.Contains(x)).ToList();
                 #region Debug
