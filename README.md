@@ -7,13 +7,9 @@
 
 ## Under Development
 * Webpage browser
-```
-Primitive concept completed.
-```
+  * Primitive concept completed.
 * Keyword density
-```
-Primitive concept completed.
-```
+  * Primitive concept completed.
 * Trends and Phrases
 * Neural Networks
 * Prediction Algorithms
