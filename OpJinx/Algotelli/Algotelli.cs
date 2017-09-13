@@ -7,34 +7,36 @@ using System.Threading.Tasks;
 /*
  * Algotelli is a algorithm that encodes
  * Normalized Data to Numerical Values
- * to use as inputs for our neural network.
+ * to use as training data for our neural network.
  */
 
 namespace OpJinx
 {
     public class Algotelli
     {
+        // TODO: Tidy up console outputs.
         public static void Run(string[] rawData, bool debug)
         {
             Console.WriteLine("Algotelli - Encoding normalized data to numerical values");
             #region Debug
             if (debug == true)
             {
-                Console.WriteLine("Raw Data:");
+                Console.WriteLine("\r\nRaw Data:");
                 ShowRaw(rawData);
             }
             #endregion
 
-            string[] colTypes = new string[4] {
-                "categorical",  // word
-                "numeric",      // word count or density
-                "numeric",      // how many sites it shows on
-                "binary"        // result
+            string[] colTypes = new string[5] {
+                "binary",           // Vector (Seen on different sites)
+                "numeric",          // Density
+                "numeric",          // Word Encoded
+                "numeric",          // Word Length
+                "categorical"       // Result
             };
             #region Debug
             if (debug == true)
             {
-                Console.WriteLine("Column Types:");
+                Console.WriteLine("\r\nColumn Types:");
                 ShowCol(colTypes);
             }
             #endregion
@@ -43,7 +45,7 @@ namespace OpJinx
             double[][] nnData = Transform(rawData, colTypes, debug);   // neural network data
             Console.WriteLine("Transform Complete");
 
-            Console.WriteLine("Result Data:");
+            Console.WriteLine("\r\nResult Data:");
             ShowTransformed(nnData);
         }
 
@@ -55,7 +57,7 @@ namespace OpJinx
             #region Debug
             if (debug == true)
             {
-                Console.WriteLine("Tokenized Data:");
+                Console.WriteLine("\r\nTokenized Data:");
                 ShowToken(data);
             }
             #endregion
@@ -67,7 +69,7 @@ namespace OpJinx
             #region Debug
             if (debug == true)
             {
-                Console.WriteLine("Scanning tokenized data to extract distinct values:");
+                Console.WriteLine("\r\nScanning tokenized data to extract distinct values:");
                 ShowDistinctValues(distinctValues);
             }
             #endregion
@@ -79,7 +81,7 @@ namespace OpJinx
             #region Debug
             if (debug == true)
             {
-                Console.WriteLine("Computing number of columns for result matrix.");
+                Console.WriteLine("\r\nComputing number of columns for result matrix.");
                 Console.WriteLine($"Adding {extraCols} columns for categorical data encoding.");
             }
             #endregion
@@ -358,19 +360,18 @@ namespace OpJinx
         }
 
         // Show Tokenized Data
-        // TODO: Fix show token data and other bugs in Algotelli.
         static void ShowToken(string[][] data)
         {
-            Console.WriteLine("Word    Density   Cross         -> Result");
-            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("Multi  Density   Word            Length         -> Result");
+            Console.WriteLine("-------.---------.---------------.--------------.-----------------");
 
             for (int i = 0; i < data.Length; ++i)
             {
                 Console.WriteLine($"Data Length: {data[i].Length}");
                 for (int j = 0; j < data[i].Length; ++j)
                 {
-                    if (j == 3) Console.Write(" -> ");
-                    Console.WriteLine(data[i][j].PadRight(10) + " ");
+                    if (j == 4) Console.Write(" -> ");
+                    Console.Write(data[i][j].PadRight(10) + " ");
                 }
                 Console.WriteLine("");
             }
@@ -408,7 +409,7 @@ namespace OpJinx
         // Show Transformed Data
         static void ShowTransformed(double[][] nnData)
         {
-            Console.WriteLine("Word    Density  Cross          -> Result");
+            Console.WriteLine("Multi  Density   Word            Length         -> Result");
             Console.WriteLine("--------------------------------------------------------------");
             for (int i = 0; i < nnData.Length; ++i)
             {
