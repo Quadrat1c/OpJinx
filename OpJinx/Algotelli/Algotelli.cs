@@ -14,7 +14,6 @@ namespace OpJinx
 {
     public class Algotelli
     {
-        // TODO: Tidy up console outputs.
         public static void Run(string[] rawData, bool debug)
         {
             Console.WriteLine("Algotelli - Encoding normalized data to numerical values");
@@ -93,15 +92,21 @@ namespace OpJinx
                 result[i] = new double[data[0].Length + extraCols];
             }
 
-            Console.WriteLine("\nComputing means and standard deviations of numeric data");
+            Console.WriteLine("\n\rComputing means and standard deviations of numeric data");
             double[] means = GetMeans(data, colTypes);
             double[] stdDevs = GetStdDevs(data, colTypes, means);
-            Console.WriteLine("\nMeans:");
-            ShowVector(means, 2);
-            Console.WriteLine("\nStandard deviations:");
-            ShowVector(stdDevs, 2);
+            #region Debug
+            if (debug == true)
+            {
+                Console.WriteLine("\n\rMeans:");
+                ShowVector(means, 2);
 
-            Console.WriteLine("\nEntering main transform loop");
+                Console.WriteLine("\n\rStandard deviations:");
+                ShowVector(stdDevs, 2);
+            }
+            #endregion
+
+            Console.WriteLine("\n\rEntering main transform loop");
             for (int row = 0; row < data.Length; ++row)
             {
                 int k = 0;  // walk across result cols
@@ -362,8 +367,8 @@ namespace OpJinx
         // Show Tokenized Data
         static void ShowToken(string[][] data)
         {
-            Console.WriteLine("Multi  Density   Word            Length         -> Result");
-            Console.WriteLine("-------.---------.---------------.--------------.-----------------");
+            Console.WriteLine("Multi       Density   Word         Length         -> Result");
+            Console.WriteLine("--------------------------------------------------------------");
 
             for (int i = 0; i < data.Length; ++i)
             {
@@ -403,13 +408,13 @@ namespace OpJinx
                 Console.Write(vector[i].ToString($"F {decimals} ")); // 2 decimals
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine("\n\r");
         }
 
         // Show Transformed Data
         static void ShowTransformed(double[][] nnData)
         {
-            Console.WriteLine("Multi  Density   Word            Length         -> Result");
+            Console.WriteLine("Multi  Density   Word    Length                 -> Result");
             Console.WriteLine("--------------------------------------------------------------");
             for (int i = 0; i < nnData.Length; ++i)
             {
