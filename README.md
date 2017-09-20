@@ -13,9 +13,14 @@
 * Trends and Phrases
 * Neural Networks
   * Primitive Algotelli completed.
+  * Primitive Neural Network completed.
 * Prediction Algorithms
 
 ## Changelog
+### v0.1.2
+```
+Neural Network and Datanormalization concepts working.
+```
 ### v0.1.1
 ```
 Basic browsing, gathering and data encoding working.
