@@ -30,6 +30,12 @@ namespace OpJinx
             Algotelli.Run(rawData, false);
             Console.ReadLine();
 
+            Console.WriteLine("Type 'yes' to test Neural Netowkr, or 'no' to skip.");
+            if (Console.ReadLine().Contains('y'))
+            {
+                new NeuralNet();
+            }
+
             List<string> keywords = new List<string>();
 
             Console.WriteLine("abovetopsecret.com:");

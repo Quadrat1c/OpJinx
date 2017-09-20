@@ -155,7 +155,7 @@ namespace OpJinx
             }
             return result;
         }
-
+        
         // Load Raw Data
         static string[][] LoadData(string[] rawData)
         {
@@ -172,7 +172,7 @@ namespace OpJinx
 
             return result;
         }
-
+        
         #region Transform Data
         // binary x value -> -1 or +1
         static double BinaryIndepenToValue(string val, int col, string[][] distinctValues)
