@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Algotelli\Algotelli.cs" />
     <Compile Include="Algotelli\Cipher.cs" />
+    <Compile Include="Commands.cs" />
     <Compile Include="NeuralNet\NeuralNet.cs" />
     <Compile Include="NeuralNet\Layer.cs" />
     <Compile Include="NeuralNet\Neuron.cs" />

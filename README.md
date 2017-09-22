@@ -17,6 +17,10 @@
 * Prediction Algorithms
 
 ## Changelog
+### v0.2.0
+```
+Refined data normalization for words. Created a command prompt format.
+```
 ### v0.1.2
 ```
 Neural Network and Datanormalization concepts working.

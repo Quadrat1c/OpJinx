@@ -8,87 +8,93 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Operation Jinx\r\n");
+            string ver = "0.2.0";
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Operation Jinx (v{ver})");
+            Console.WriteLine("_______________________\r\n");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"Type 'help' for a list of commands.");
 
-            // Just test data for Algotelli.
-            string[] rawData = new string[]
+            bool quitNow = false;
+            string cmd;
+
+            while (!quitNow)
             {
-                "1 8 2018211316 5 good",
-                "1 4 89121211825 7 good",
-                "0 6 112524 4 bad",
-                "0 7 41821475 6 bad",
-                "1 2 20152351819 1 good",
-                "1 1 1915181519 5 good",
-                "0 18 18544920 6 bad",
-                "0 10 16151920 4 bad",
-                "1 3 918131 4 good",
-                "1 8 8211818931145 9 good",
-                "1 3 195318520 6 other",
-                "0 5 7154 3 other"
-            };
+                Console.ForegroundColor = ConsoleColor.Green;
+                cmd = Console.ReadLine();
 
-            Algotelli.Run(rawData, false);
-            Console.ReadLine();
-
-            Console.WriteLine("Type 'yes' to test Neural Netowkr, or 'no' to skip.");
-            if (Console.ReadLine().Contains('y'))
-            {
-                new NeuralNet();
-            }
-
-            List<string> keywords = new List<string>();
-
-            Console.WriteLine("abovetopsecret.com:");
-            keywords = Words.DensityCheck("http://abovetopsecret.com", false);
-            DisplayKeyWords(keywords, 2);
-            Console.ReadLine();
-
-            Console.WriteLine("godlikeproductions.com:");
-            keywords = Words.DensityCheck("http://godlikeproductions.com", false);
-            DisplayKeyWords(keywords, 2);
-            Console.ReadLine();
-
-            Console.WriteLine("infowars.com:");
-            keywords = Words.DensityCheck("http://infowars.com", false);
-            DisplayKeyWords(keywords, 2);
-            Console.ReadLine();
-
-            Console.WriteLine("drudgereport.com:");
-            keywords = Words.DensityCheck("http://drudgereport.com/", false);
-            DisplayKeyWords(keywords, 2);
-            Console.ReadLine();
-
-            Console.WriteLine("reddit.com:");
-            keywords = Words.DensityCheck("http://reddit.com/", false);
-            DisplayKeyWords(keywords, 2);
-            Console.ReadLine();
-
-            Console.WriteLine("cnn.com:");
-            keywords = Words.DensityCheck("http://cnn.com", false);
-            DisplayKeyWords(keywords, 2);
-
-            // TODO: Place the key words and density into a string[] to send to algotelli.
-
-            Console.Write("Press any key to exit.");
-            Console.ReadLine();
-        }
-
-        /// <summary>
-        /// input a list and a minimum count for keyword density
-        /// </summary>
-        /// <param name="list">The list you wanto display</param>
-        /// <param name="minCount">Minimum count for keyword density</param>
-        static void DisplayKeyWords(List<string> list, int minCount)
-        {
-            var keywords = list.GroupBy(x => x).OrderByDescending(x => x.Count());
-
-            foreach (var word in keywords)
-            {
-                if (word.Count() > minCount)
+                switch (cmd)
                 {
-                    Console.WriteLine($"{word.Key} {word.Count()}");
+                    // Main ********************************************
+                    case "help":
+                    case "'help'":
+                    case "h":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Commands.ListCommands();
+                        Console.WriteLine("");
+                        break;
+
+                    case "ver":
+                    case "version":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Version: {ver}");
+                        Console.WriteLine("");
+                        break;
+
+                    case "clear":
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Operation Jinx (v{ver})");
+                        Console.WriteLine("_______________________\r\n");
+                        Console.WriteLine("");
+                        break;
+
+                    case "exit":
+                    case "quit":
+                        Environment.Exit(0);
+                        break;
+
+                    // Jinx ********************************************
+                    case "keywords":
+                    case "kw":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Commands.GetKeywords();
+                        Console.WriteLine("");
+                        break;
+
+                    case "nnet":
+                    case "neuralnet":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Commands.NeuralNetTest();
+                        Console.WriteLine("");
+                        break;
+
+                    case "algotelli":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Commands.AlgotelliTest();
+                        Console.WriteLine("");
+                        break;
+
+                    // Utility
+                    case "dec":
+                        // TODO: Convert words to decimal using this concept.
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("Enter word to convert: ");
+                        string word = Ciphers.Text2Num(Console.ReadLine());
+                        word = "0." + word;
+                        double test = Convert.ToDouble(word);
+                        Console.WriteLine(test);
+                        Console.WriteLine("");
+                        break;
+
+                    // Default ********************************************
+                    default:
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine($"Unknown command: {cmd}");
+                        Console.WriteLine("");
+                        break;
                 }
             }
-        }
+        }  
     }
 }
