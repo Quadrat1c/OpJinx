@@ -115,21 +115,33 @@ namespace OpJinx
         {
             string[] rawData = new string[]
            {
-                "1 8 2018211316 5 good",
-                "1 4 89121211825 7 good",
-                "0 6 112524 4 bad",
-                "0 7 41821475 6 bad",
-                "1 2 20152351819 1 good",
-                "1 1 1915181519 5 good",
-                "0 18 18544920 6 bad",
-                "0 10 16151920 4 bad",
-                "1 3 918131 4 good",
-                "1 8 8211818931145 9 good",
-                "1 3 195318520 6 other",
-                "0 5 7154 3 other"
+                "1 8 0.2018211316 5 good",
+                "1 4 0.89121211825 7 good",
+                "0 6 0.112524 4 bad",
+                "0 7 0.41821475 6 bad",
+                "1 2 0.20152351819 1 good",
+                "1 1 0.1915181519 5 good",
+                "0 18 0.18544920 6 bad",
+                "0 10 0.16151920 4 bad",
+                "1 3 0.918131 4 good",
+                "1 8 0.8211818931145 9 good",
+                "1 3 0.195318520 6 other",
+                "0 5 0.7154 3 other"
            };
 
-            Algotelli.Run(rawData, false);
+            Console.WriteLine("Debug type ON or OFF");
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            if (Console.ReadLine().ToLower().Contains("on"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Algotelli.Run(rawData, true);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Algotelli.Run(rawData, false);
+            }
         }
         #endregion
     }
