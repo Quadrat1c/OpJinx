@@ -8,6 +8,8 @@ namespace OpJinx
 {
     public class Commands
     {
+        public static List<string> encodedKeywords = new List<string>();
+
         public static void ListCommands()
         {
             Console.WriteLine("[Main]");
@@ -20,6 +22,7 @@ namespace OpJinx
             CmdColor("keywords", "get keywords from sites.");
             CmdColor("nnet", "neural net test.");
             CmdColor("aglotelli", "runs algotelli test.");
+            CmdColor("web", "runs web scraper test.");
             Console.WriteLine("");
             Console.WriteLine("[Utility]");
             CmdColor("dec", "convert a word to decimal format for nnet.");
@@ -73,6 +76,13 @@ namespace OpJinx
             keywords = Words.DensityCheck("http://cnn.com", false);
             DisplayKeyWords(keywords, 2);
 
+            var encodedKeys = encodedKeywords.GroupBy(x => x).OrderByDescending(x => x.Count());
+
+            foreach (var word in encodedKeys)
+            {
+                Console.WriteLine($"{word.Key}");
+            }
+
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("End of keyword collection.");
         }
@@ -97,7 +107,10 @@ namespace OpJinx
             {
                 if (word.Count() > minCount)
                 {
+                    string[] input = new string[] { word.Key, word.Count().ToString() };
                     Console.WriteLine($"{word.Key} {word.Count()}");
+                    encodedKeywords.InsertRange(2, input);
+                    //encodedKeywords.Add("0." + Ciphers.Text2Num(word.Key) + " " + word.Count());
                 }
             }
         }

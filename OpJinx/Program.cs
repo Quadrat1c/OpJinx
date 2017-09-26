@@ -8,7 +8,7 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
-            string ver = "0.2.0";
+            string ver = "0.2.1";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Operation Jinx (v{ver})");
             Console.WriteLine("_______________________\r\n");
@@ -51,6 +51,7 @@ namespace OpJinx
 
                     case "exit":
                     case "quit":
+                    case "q":
                         Environment.Exit(0);
                         break;
 
@@ -75,7 +76,13 @@ namespace OpJinx
                         Console.WriteLine("");
                         break;
 
-                    // Utility
+                    case "web":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Web.Crawler.Start();
+                        Console.WriteLine("");
+                        break;
+
+                    // Utility ********************************************
                     case "dec":
                         // TODO: Convert words to decimal using this concept.
                         Console.ForegroundColor = ConsoleColor.Red;
