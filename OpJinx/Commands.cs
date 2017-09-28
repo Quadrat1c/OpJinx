@@ -44,36 +44,36 @@ namespace OpJinx
             List<string> keywords = new List<string>();
 
             Console.WriteLine("abovetopsecret.com:");
-            keywords = Words.DensityCheck("http://abovetopsecret.com", false, false);
+            keywords = Words.DensityCheck("http://abovetopsecret.com", false);
             DisplayKeyWords(keywords, 2);
             Continue();
             Console.ReadLine();
 
             Console.WriteLine("godlikeproductions.com:");
-            keywords = Words.DensityCheck("http://godlikeproductions.com", false, false);
+            keywords = Words.DensityCheck("http://godlikeproductions.com", false);
             DisplayKeyWords(keywords, 2);
             Console.ReadLine();
 
             Console.WriteLine("infowars.com:");
-            keywords = Words.DensityCheck("http://infowars.com", false, false);
+            keywords = Words.DensityCheck("http://infowars.com", false);
             DisplayKeyWords(keywords, 2);
             Continue();
             Console.ReadLine();
 
             Console.WriteLine("drudgereport.com:");
-            keywords = Words.DensityCheck("http://drudgereport.com/", false, false);
+            keywords = Words.DensityCheck("http://drudgereport.com/", false);
             DisplayKeyWords(keywords, 2);
             Continue();
             Console.ReadLine();
 
             Console.WriteLine("reddit.com:");
-            keywords = Words.DensityCheck("http://reddit.com/", false, false);
+            keywords = Words.DensityCheck("http://reddit.com/", false);
             DisplayKeyWords(keywords, 2);
             Continue();
             Console.ReadLine();
 
             Console.WriteLine("cnn.com:");
-            keywords = Words.DensityCheck("http://cnn.com", false, false);
+            keywords = Words.DensityCheck("http://cnn.com", false);
             DisplayKeyWords(keywords, 2);
             Continue();
             Console.ReadLine();
