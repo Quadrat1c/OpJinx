@@ -27,17 +27,15 @@ namespace OpJinx.Web
 
             // Find all components
             HtmlNodeCollection threads_0 = htmlDocument.DocumentNode.SelectNodes("//div[@class='headline']");
-            //HtmlNodeCollection threads_1 = htmlDocument.DocumentNode.SelectNodes("//div[@class='footline']");
-            //HtmlNodeCollection threads_2 = htmlDocument.DocumentNode.SelectNodes("//div[@class='itemcontent']");
 
             Console.WriteLine("Crawled!\n\r");
             Console.WriteLine("2. Constructing objects.");
 
+            // 1. List of thread titles
             for (int i = 0; i < threads_0.Count(); i++)
             {
                 string headline = "";
                 string link = "";
-
                 link = threads_0[i].GetAttributeValue("href", "");
                 headline = threads_0[i].InnerText.Trim();
 

@@ -8,7 +8,7 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
-            string ver = "0.2.1";
+            string ver = "0.2.2";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Operation Jinx (v{ver})");
             Console.WriteLine("_______________________\r\n");
@@ -17,7 +17,7 @@ namespace OpJinx
 
             bool quitNow = false;
             string cmd;
-
+            
             while (!quitNow)
             {
                 Console.ForegroundColor = ConsoleColor.Green;

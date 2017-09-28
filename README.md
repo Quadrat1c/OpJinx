@@ -3,7 +3,7 @@
 
 ## Project Stack
 * C# 6 (Not utilizing anything from 6 yet)
-* ~~Html Agility Pack v1.5.5~~ (Not using this don't know if we will)
+* Html Agility Pack v1.5.5
 
 ## Under Development
 * Webpage browser
@@ -17,6 +17,14 @@
 * Prediction Algorithms
 
 ## Changelog
+### v0.2.2
+```
+Bug fixes (keywords, optimzations)
+```
+### v0.2.1
+```
+Implemented an example web crawler/scraper with Html Agility Pack
+```
 ### v0.2.0
 ```
 Refined data normalization for words. Created a command prompt format.

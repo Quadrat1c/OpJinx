@@ -14,7 +14,7 @@ namespace OpJinx
         /// <param name="site"></param>
         /// <param name="debug"></param>
         /// <returns></returns>
-        public static List<string> DensityCheck(string site, bool debug)
+        public static List<string> DensityCheck(string site, bool debug, bool disableBlacklist)
         {
             using (WebClient client = new WebClient())
             {
@@ -61,6 +61,13 @@ namespace OpJinx
                     "been", "next", "use", "most", "tells", "david", "knight", "watch", "video", "confirm", "daily", "drudge", "report",
                     "forum", "forums", "thread", "threads", "reddit", "gold", "past", "post", "say", "ago", "comments", "search", "hours",
                     "share", "[uk]", "times", "were", "doing", "media" };
+
+                // Don't blacklist any words.
+                if (disableBlacklist)
+                {
+                    blacklist = null;
+                }
+
                 list = list.Where(x => x.Length > 2).Where(x => !blacklist.Contains(x)).ToList();
                 #region Debug
                 if (debug == true)
