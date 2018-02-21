@@ -8,6 +8,7 @@ namespace OpJinx
     {
         static void Main(string[] args)
         {
+            // Testing github commit
             string ver = "0.2.2";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Operation Jinx (v{ver})");

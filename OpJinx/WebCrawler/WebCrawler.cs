@@ -50,7 +50,7 @@ namespace OpJinx.Web
             Console.WriteLine("Constructed!\n");
             Console.WriteLine("3.Saving to files.");
 
-            if (SaveToFileATS(listOfThreads, "Above Top Secret"))
+            if (SaveToFileATS(listOfThreads, "Above Top Secret " + DateTime.Now.ToString()))
             {
                 Console.WriteLine("Saved! Please check " + @"Results\WebCrawlerResults.txt");
             }
