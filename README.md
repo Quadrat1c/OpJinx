@@ -17,15 +17,14 @@
   * .NET Framework 4.6
 
 ## Under Development
-* Webpage browser
-  * Primitive concept completed.
-* Keyword density
-  * Primitive concept completed.
-* Trends and Phrases
-* Neural Networks
-  * Primitive Algotelli completed.
-  * Primitive Neural Network completed.
-* Prediction Algorithms
+* JinxCrawler
+  * Add more websites to get headlines from
+* JinxGeneration
+  * Optimize neural network
+
+* Future Ideas
+  * JinxCrawler automatically finds more websites and pulls headlines
+  * Create everything to scale on hundreds of different servers
 
 ## Changelog
 ### v0.2.5
