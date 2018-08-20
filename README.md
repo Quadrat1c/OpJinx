@@ -1,12 +1,20 @@
 # Operation Jinx - Predict the Future
  Browse conspiracy and news websites, gather keywords and trends. Use the gathered data to predict the future using a neural network.
 
+## JinxCrawler
+ Crawl websites and save headlines for JinxGenration to learn from.
+
+## JinxGeneration
+ Read a text file of headlines and use it to learn and predict the future.
+
 ## Project Stack
 * JinxCrawler
-  * C# 6 (Not utilizing anything from 6 yet)
   * Html Agility Pack v1.5.5
+  * C# 6 (Not utilizing anything from 6 yet)
+  * .NET Framework 4.5.2
 * JinxGenerator
   * C# 6 (Not utilizing anything from 6 yet)
+  * .NET Framework 4.6
 
 ## Under Development
 * Webpage browser
@@ -20,6 +28,10 @@
 * Prediction Algorithms
 
 ## Changelog
+### v0.2.5
+```
+JinxCrawler and JinxGeneration added with working concept.
+```
 ### v0.2.2
 ```
 Bug fixes (keywords, optimzations)
