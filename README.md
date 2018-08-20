@@ -2,8 +2,11 @@
  Browse conspiracy and news websites, gather keywords and trends. Use the gathered data to predict the future using a neural network.
 
 ## Project Stack
-* C# 6 (Not utilizing anything from 6 yet)
-* Html Agility Pack v1.5.5
+* JinxCrawler
+  * C# 6 (Not utilizing anything from 6 yet)
+  * Html Agility Pack v1.5.5
+* JinxGenerator
+  * C# 6 (Not utilizing anything from 6 yet)
 
 ## Under Development
 * Webpage browser
