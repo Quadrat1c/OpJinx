@@ -11,7 +11,7 @@
 * JinxCrawler
   * Html Agility Pack v1.5.5
   * C# 6 (Not utilizing anything from 6 yet)
-  * .NET Framework 4.5.2
+  * .NET Framework 4.6
 * JinxGenerator
   * C# 6 (Not utilizing anything from 6 yet)
   * .NET Framework 4.6
