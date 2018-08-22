@@ -1,8 +1,8 @@
-# Discord Link:
- https://discord.gg/tctHHH6
-
 # Operation Jinx - Predict the Future
  Browse conspiracy and news websites, gather keywords and trends. Use the gathered data to predict the future using a neural network.
+
+# Discord Link:
+ https://discord.gg/tctHHH6
 
 ## JinxCrawler
  Crawl websites and save headlines for JinxGenration to learn from.
